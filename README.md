@@ -1,16 +1,39 @@
-# ny_times_project
+# NY Times Popular Article Project
+The project is to show Popular Articles from NY Times using their API. To get access of this API,  you should create a API-Key from [NY Times Developer website.](https://developer.nytimes.com/get-started "NY Times Developer website.")
 
-A new Flutter project.
+### Basic Instructions
+This is a simple Flutter app. To run this code or to get a apk build of this project, you should download Flutter from their official Website. Use [this documentation](https://docs.flutter.dev/get-started/install "this documentation") for instructions and guidelines. 
 
-## Getting Started
+- Replace the ```
+apiKey
+``` with your NY Times API KEY in ```
+lib/repository/end_points.dart
+```
+- Run this project by  ```
+flutter run
+```
+- Run ```
+ flutter pub get
+``` in the project directory
 
-This project is a starting point for a Flutter application.
+------------
 
-A few resources to get you started if this is your first Flutter project:
+### Contents
+- News article listing; in a simple UI design
+- News Details page; where you can see the abstraction of the news
+- Responsive Layout
+- API Integration
+- Simple and Structured Code
+- MVC architecture
+- With Provider State management
+- Scalable and Performance oriented design
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Development Environment
+- Flutter: 2.18.6
+- Dart: 2.15.0
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### App Screenshots
+
+![article-list](screenshots/article_lists.jpg?raw=true)
+![article-detail](screenshots/article_details.jpg?raw=true)

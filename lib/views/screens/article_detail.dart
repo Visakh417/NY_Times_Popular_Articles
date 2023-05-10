@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ny_times_project/models/article_model.dart';
 
+
+/// simple screen to disply the News Details
+/// Shows only 'title', 'cover image', 'abstration', 'author', 'published date'
 class ArticleDetail extends StatelessWidget {
   const ArticleDetail({required this.article, Key? key}) : super(key: key);
 
@@ -11,7 +14,7 @@ class ArticleDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      
+      /// appbar with a simple heading
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         title:  Text(article.title, maxLines: 1,style: Theme.of(context).textTheme.headline4?.copyWith(
@@ -24,7 +27,9 @@ class ArticleDetail extends StatelessWidget {
       ),
       ),
       body: ListView(
+        /// for scrollability and Listing different widget Listview is used
         children: [
+          /// Padding is added for better User Experience
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Text(
@@ -32,6 +37,7 @@ class ArticleDetail extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
           ),
+          /// Image will be shown only if [imagePath] is not null
           article.imagePath != null
               ? Image(image: NetworkImage(article.imagePath!))
               : Container(),

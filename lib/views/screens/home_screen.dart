@@ -18,13 +18,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    /// Initiate to fetch article in  [initState]
+    /// if only data is not available
     if (Provider.of<ArticleProvider>(context, listen: false).articleResponse ==
         null) {
       Provider.of<ArticleProvider>(context, listen: false).fetchArticleData();
     }
+
+    /// Set up the Statusbar color
+    /// using [SystemChrome] in [Foundation] library
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black, // navigation bar color
-    statusBarColor: Colors.cyan, // status bar color
+    systemNavigationBarColor: Colors.black,
+    statusBarColor: Colors.cyan,
     
   ));
     super.initState();
@@ -48,6 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 articleProvider.articleResponse?.articles ?? []);
           }
 
+          /// Shows a Error message if [statusCode] is not 200 Article Fetching
+          /// Set the message as [StringConstants.somethingWentWrong], if the response message is null
           return ErrorMessageWidget(articleProvider.articleResponse?.message ??
               StringConstants.somethingWentWrong);
         },
@@ -56,6 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   AppBar _appBar() {
+    /// for readability and to reduce complexity
+    /// AppBar is placed in a seperate widget
     return AppBar(
       title: Text(
         "NY Times Most Popular",
@@ -65,13 +74,17 @@ class _HomeScreenState extends State<HomeScreen> {
             ?.copyWith(color: Colors.white),
       ),
       systemOverlayStyle: const SystemUiOverlayStyle(
-        // Status bar color
+        /// Status bar color
         statusBarColor: Colors.cyan,
-
-        // Status bar brightness (optional)
-        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
-        statusBarBrightness: Brightness.light, // For iOS (dark icons)
+        /// Status bar brightness (optional)
+        /// For Android (dark icons)
+        statusBarIconBrightness: Brightness.dark, 
+        /// For iOS (dark icons)
+        statusBarBrightness: Brightness.light,
       ),
+
+      /// Placed these icons without any functionlity
+      /// To make it look like in UI Design
       actions: const [
         Icon(
           Icons.search,

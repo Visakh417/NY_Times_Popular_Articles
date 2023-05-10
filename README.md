@@ -27,5 +27,5 @@ This is a simple Flutter app. To run this code or to get a apk build of this pro
 
 ### App Screenshots
 ------------
-![article-list](screenshots/article_lists.jpg?raw=true)
-![article-detail](screenshots/article_details.jpg?raw=true)
+![article_lists](screenshots/article_lists.jpg?raw=true)
+![article_details](screenshots/article_details.jpg?raw=true)
